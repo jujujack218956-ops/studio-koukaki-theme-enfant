@@ -1,0 +1,90 @@
+// =============================================
+// ÉTAPE 1 — Animations générales
+// =============================================
+
+// --- Fade in sections au chargement ---
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Toutes les sections : même durée, directions différentes
+.banner {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.story {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+#studio {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.oscar-nomination {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+// --- Rotation des fleurs ---
+@keyframes rotatePetal {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Les fleurs sont des ::after dans le thème parent
+// On cible leurs conteneurs pour appliquer la rotation
+.story__article::after,
+.story::before,
+.story::after {
+  animation: rotatePetal 6s linear infinite;
+  transform-origin: center center;
+  display: inline-block;
+}
+
+// --- Apparition des titres au scroll ---
+// (déclenchée via JS avec IntersectionObserver)
+h2,
+h3 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
