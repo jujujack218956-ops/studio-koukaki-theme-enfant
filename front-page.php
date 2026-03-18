@@ -68,7 +68,7 @@ get_header();
         </div>
     </section>
 
-    <?php get_template_part('template-parts/oscar-nomination'); ?>
+    <?php get_template_part('template-parts/oscar-animation'); ?>
 
 </main>
 
