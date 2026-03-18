@@ -63,11 +63,12 @@
   }
 }
 
-// Les fleurs sont des ::after dans le thème parent
+// Les fleurs sont des pseudo-classes ::after et des ::before sur différents éléments
 // On cible leurs conteneurs pour appliquer la rotation
-.story__article::after,
-.story::before,
-.story::after {
+article.story__article::after,
+footer#colophon.site-footer::before,
+footer#colophon.site-footer::after,
+h2::after {
   animation: rotatePetal 6s linear infinite;
   transform-origin: center center;
   display: inline-block;
