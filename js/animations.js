@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+  // --- Titres au scroll ---
   const elements = document.querySelectorAll('h2, h3, #studio, .oscar-nomination');
-
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -9,18 +9,35 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.2 });
-
+  }, { threshold: 0.4 });
   elements.forEach(function (el) {
     observer.observe(el);
   });
 
-  window.addEventListener('scroll', function () {
-    const title = document.querySelector('.banner__title');
-    if (title) {
-      const scrollY = window.scrollY;
-      title.style.transform = 'translateY(' + scrollY * 0.3 + 'px)';
-    }
-  });
+  // --- Parallaxe logo ---
+  const title = document.querySelector('.banner__title');
+  const story = document.querySelector('.story');
+  let titleHeight = null;
+
+  if (title && story) {
+    window.addEventListener('scroll', function () {
+
+      // Mesure au premier scroll, image déjà rendue
+      if (titleHeight === null) {
+        titleHeight = title.offsetHeight;
+      }
+
+      const storyTop = story.getBoundingClientRect().top;
+      const titleBottom = window.innerHeight / 2 + titleHeight / 2;
+
+      if (storyTop <= titleBottom) {
+        title.style.top = (storyTop - titleHeight) + 'px';
+        title.style.transform = 'none';
+      } else {
+        title.style.top = '50%';
+        title.style.transform = 'translateY(-50%)';
+      }
+    });
+  }
 
 });

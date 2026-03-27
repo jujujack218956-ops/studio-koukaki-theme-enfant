@@ -2,7 +2,7 @@
 // ÉTAPE 1 — Animations générales
 // =============================================
 
-// --- Fade in sections au chargement ---
+// --- FadeIn des sections au chargement ---
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -13,31 +13,18 @@
 }
 
 .banner {
-  animation: fadeIn 0.8s ease-out forwards;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.2s ease-out forwards;
 }
-
-.story {
-  animation: fadeIn 0.8s ease-out forwards;
-}
-
+.story,
 #studio,
 .oscar-nomination {
-  opacity: 0;
-  transition: opacity 1.2s ease;
-
-  &.is-visible {
-    opacity: 1;
-  }
-}
-
-#studio,
-.oscar-nomination {
-  opacity: 0;
-  transition: opacity 1.2s ease;
-
-  &.is-visible {
-    opacity: 1;
-  }
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
 // --- Rotation des fleurs ---
@@ -50,7 +37,7 @@
   }
 }
 
-// Les fleurs sont des pseudo-classes ::after et des ::before sur différents éléments
+// Les fleurs ont des pseudo-classes (::after et des ::before)
 // On cible leurs conteneurs pour appliquer la rotation
 article.story__article::after,
 footer#colophon.site-footer::before,
@@ -77,17 +64,6 @@ h3 {
 // =============================================
 // ÉTAPE 2 — Hero Header
 // =============================================
-
-// --- Vidéo background ---
-.banner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .banner__fallback {
   position: absolute;
@@ -129,13 +105,21 @@ h3 {
 }
 
 .banner__title {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   z-index: 2;
-  animation: float 3s ease-in-out infinite;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  img {
+    animation: float 3s ease-in-out infinite;
+    width: 60%; // ← ta valeur
+    max-width: 500px;
+  }
 }
 
 // --- Flottement du titre ---

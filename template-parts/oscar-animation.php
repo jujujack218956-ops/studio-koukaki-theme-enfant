@@ -13,7 +13,7 @@
       Une fierté pour toute l'équipe du Studio Koukaki.
     </p>
     <img
-      src="<?php echo get_stylesheet_directory_uri(); ?>/images_koukaki/oscars-logo.png"
+      src="<?php echo get_stylesheet_directory_uri(); ?>/images_koukaki/oscars.jpg"
       alt="Oscars Short Film Animated">
   </div>
 </section>
