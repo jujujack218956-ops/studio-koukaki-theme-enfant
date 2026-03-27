@@ -24,6 +24,21 @@ function theme_enqueue_styles()
             true
         );
     }
+
+    // SwiperJS
+    wp_enqueue_style(
+        'swiper-style',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+        array(),
+        '11'
+    );
+    wp_enqueue_script(
+        'swiper-script',
+        'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+        array(),
+        '11',
+        true
+    );
 }
 
 // Sync customizer options depuis le thème parent

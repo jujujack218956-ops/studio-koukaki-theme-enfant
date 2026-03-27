@@ -1,14 +1,45 @@
 // =============================================
 // ÉTAPE 1 — Animations générales
 // =============================================
+.banner__title {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  animation: none;
+
+  img {
+    animation: float 3s ease-in-out infinite;
+    width: 60%; // ← ta valeur
+    max-width: 500px;
+  }
+}
 
 // --- FadeIn des sections au chargement ---
-@keyframes fadeIn {
+@keyframes fadeInTop {
   from {
     opacity: 0;
+    transform: translateY(-200px);
   }
   to {
     opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -19,12 +50,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeIn 1.2s ease-out forwards;
+  // animation: fadeInTop 1.2s ease-out forwards;
 }
 .story,
 #studio,
 .oscar-nomination {
-  animation: fadeIn 1.2s ease-out forwards;
+  animation: fadeInBottom 1.2s ease-out forwards;
 }
 
 // --- Rotation des fleurs ---
@@ -42,6 +73,7 @@
 article.story__article::after,
 footer#colophon.site-footer::before,
 footer#colophon.site-footer::after,
+#studio h2::before,
 h2::after {
   animation: rotatePetal 6s linear infinite;
   transform-origin: center center;
@@ -53,8 +85,8 @@ h2,
 h3 {
   opacity: 0;
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity 0.8s ease,
+    transform 0.8s ease;
 
   &.is-visible {
     opacity: 1;
@@ -104,24 +136,6 @@ h3 {
   }
 }
 
-.banner__title {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  img {
-    animation: float 3s ease-in-out infinite;
-    width: 60%; // ← ta valeur
-    max-width: 500px;
-  }
-}
-
 // --- Flottement du titre ---
 @keyframes float {
   0% {
@@ -139,4 +153,42 @@ h3 {
   100% {
     transform: translateY(0px);
   }
+}
+
+// =============================================
+// ÉTAPE 3 — Carrousel personnages
+// =============================================
+#characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    width: 100%;
+  }
+}
+
+.characters-swiper {
+  width: 100%;
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    figure {
+      margin: 20px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
+
+.swiper-slide {
+  width: auto;
 }
