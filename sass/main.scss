@@ -54,6 +54,7 @@
 }
 .story,
 #studio,
+#place,
 .oscar-nomination {
   animation: fadeInBottom 1.2s ease-out forwards;
 }
@@ -191,4 +192,61 @@ h3 {
 
 .swiper-slide {
   width: auto;
+}
+
+// =============================================
+// ÉTAPE 4 — Nuages parallaxe
+// =============================================
+.story #place {
+  position: relative;
+  overflow: hidden;
+  background-image: url("../assets/images_koukaki/image-place.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.place__cloud {
+  position: absolute;
+  top: 0;
+  will-change: transform;
+  filter: blur(33px);
+  transition: transform 0.3s ease-out;
+}
+
+.place__cloud--big {
+  left: 65%;
+  top: 8%;
+  width: 35%;
+}
+
+.place__cloud--little {
+  left: 60%;
+  top: 40%;
+  width: 20%;
+}
+
+// =============================================
+// ÉTAPE 5 — Section Oscars
+// =============================================
+.oscar-nomination {
+  display: flex;
+  align-items: center;
+  padding: 60px;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  h3 {
+    background-image: url("../../foce/assets/images/orange_place_bg.png");
+    background-size: 115% 115%;
+    text-align: left;
+  }
+
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
 }

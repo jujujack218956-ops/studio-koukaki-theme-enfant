@@ -7,13 +7,9 @@
 ?>
 <section class="oscar-nomination">
   <div class="oscar-nomination__content">
-    <h2>Nomination aux Oscars</h2>
-    <p>
-      "Fleurs d'oranger &amp; chats errants" est nommé aux Oscars du meilleur court-métrage d'animation !
-      Une fierté pour toute l'équipe du Studio Koukaki.
-    </p>
+    <h3>Fleurs d'oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
     <img
-      src="<?php echo get_stylesheet_directory_uri(); ?>/images_koukaki/oscars.jpg"
+      src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/oscars.jpg"
       alt="Oscars Short Film Animated">
   </div>
 </section>

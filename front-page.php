@@ -23,7 +23,7 @@ get_header();
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
                 alt="logo Fleurs d'oranger & chats errants">
         </div>
-    </section>
+    </section>@
 
     <section id="story" class="story">
         <h2>L'histoire</h2>
@@ -35,6 +35,12 @@ get_header();
         <?php get_template_part('template-parts/characters'); ?>
 
         <article id="place">
+            <img class="place__cloud place__cloud--big"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/big_cloud.png"
+                alt="">
+            <img class="place__cloud place__cloud--little"
+                src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/little_cloud.png"
+                alt="">
             <div>
                 <h3>Le Lieu</h3>
                 <p><?php echo get_theme_mod('place'); ?></p>

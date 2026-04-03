@@ -54,4 +54,27 @@ document.addEventListener('DOMContentLoaded', function () {
       slideShadows: false,
     },
   });
+
+
+  // --- Nuages parallaxe ---
+  const place = document.querySelector('#place');
+  const clouds = document.querySelectorAll('.place__cloud');
+
+  if (place && clouds.length) {
+    window.addEventListener('scroll', function () {
+      const placeTop = place.getBoundingClientRect().top;
+      const placeHeight = place.offsetHeight;
+      const windowHeight = window.innerHeight;
+
+      if (placeTop < windowHeight && placeTop > -placeHeight) {
+        // Progression de 0 à 1 pendant le scroll sur la section
+        const progress = 1 - (placeTop / windowHeight);
+        const offset = Math.min(progress * 300, 300); // max 300px
+
+        clouds.forEach(function (cloud) {
+          cloud.style.transform = 'translateX(-' + offset + 'px)';
+        });
+      }
+    });
+  }
 });
