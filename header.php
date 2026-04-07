@@ -39,8 +39,9 @@
                     <span class="line"></span>
                     <span class="line"></span>
                 </button>
-
+                <button class="menu-close">✕</button>
                 <div class="menu-overlay">
+
                     <div class="menu-overlay__header">
                         <img class="menu-overlay__logo"
                             src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"

@@ -1,5 +1,34 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+
+// --- Déclarations globales nav ---
+  const siteNav = document.getElementById('site-navigation');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menuClose = document.querySelector('.menu-close');
+
+
+// --- Cale le menu overlay sur le conteneur .site ---
+const site = document.getElementById('page');
+const overlay = document.querySelector('.menu-overlay');
+
+if (site && overlay) {
+    function updateOverlayPosition() {
+        const rect = site.getBoundingClientRect();
+        overlay.style.left = rect.left + 'px';
+        overlay.style.width = rect.width + 'px';
+    }
+    updateOverlayPosition();
+    window.addEventListener('resize', updateOverlayPosition);
+}
+
+// Fermeture via bouton close
+if (menuClose && siteNav && menuToggle) {
+    menuClose.addEventListener('click', function () {
+        siteNav.classList.remove('toggled');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    });
+}
+
   // --- Titres au scroll ---
   const elements = document.querySelectorAll('h2, h3');
   const observer = new IntersectionObserver(function (entries) {

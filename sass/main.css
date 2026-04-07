@@ -181,6 +181,21 @@ h3.is-visible {
   max-width: 300px;
 }
 
+.menu-close {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+  display: none;
+}
+
 .main-navigation {
   position: relative !important;
   width: 100% !important;
@@ -215,19 +230,14 @@ h3.is-visible {
   transform-origin: center;
 }
 
+.toggled .menu-close {
+  display: block;
+}
+
 .toggled .menu-toggle {
-  position: fixed !important;
   right: 50px;
   top: 20px;
-}
-.toggled .menu-toggle .line:nth-child(1) {
-  transform: translateY(50%) rotate(45deg);
-}
-.toggled .menu-toggle .line:nth-child(2) {
-  opacity: 0;
-}
-.toggled .menu-toggle .line:nth-child(3) {
-  transform: rotate(-45deg);
+  display: none;
 }
 
 .menu-overlay__header {
@@ -237,10 +247,9 @@ h3.is-visible {
 .menu-overlay {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 80px;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 80px);
   background-color: #fff5e9;
   z-index: 999;
   flex-direction: column;
