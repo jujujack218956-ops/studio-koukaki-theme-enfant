@@ -41,19 +41,19 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Carrousel personnages ---
-  new Swiper('.characters-swiper', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-      rotate: 0,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: false,
-    },
-  });
+  // new Swiper('.characters-swiper', {
+  //   effect: 'coverflow',
+  //   grabCursor: true,
+  //   centeredSlides: true,
+  //   slidesPerView: 3,
+  //   coverflowEffect: {
+  //     rotate: 0,
+  //     stretch: 0,
+  //     depth: 100,
+  //     modifier: 1,
+  //     slideShadows: false,
+  //   },
+  // });
 
 
   // --- Nuages parallaxe ---
