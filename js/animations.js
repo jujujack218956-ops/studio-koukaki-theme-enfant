@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   // --- Titres au scroll ---
-  const elements = document.querySelectorAll('h2, h3, #studio, .oscar-nomination');
+  const elements = document.querySelectorAll('h2, h3');
   const observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {

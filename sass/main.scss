@@ -11,12 +11,11 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  animation: none;
 
   img {
     animation: float 3s ease-in-out infinite;
-    width: 60%; // ← ta valeur
-    max-width: 500px;
+    max-width: 600px;
+    margin-top: -20%;
   }
 }
 
@@ -46,11 +45,9 @@
 .banner {
   position: relative;
   width: 100%;
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeInTop 1.2s ease-out forwards;
 }
 .story,
 #studio,

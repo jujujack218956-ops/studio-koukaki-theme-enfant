@@ -6,10 +6,6 @@ get_header();
 
     <section class="banner">
         <div class="banner__video-container">
-            <img
-                class="banner__fallback"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
-                alt="Fleurs d'oranger & chats errants">
             <video
                 class="banner__video"
                 autoplay
@@ -18,6 +14,10 @@ get_header();
                 playsinline>
                 <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video_koukaki/video-header.mp4" type="video/mp4">
             </video>
+            <img
+                class="banner__fallback"
+                src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
+                alt="Fleurs d'oranger & chats errants">
         </div>
         <div class="banner__title">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
