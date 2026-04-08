@@ -29,6 +29,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // --- Animation liens menu à l'ouverture ---
+  const menuToggleBtn = document.querySelector('.menu-toggle');
+  if (menuToggleBtn && siteNav) {
+    menuToggleBtn.addEventListener('click', function () {
+      const links = document.querySelectorAll('.menu-overlay ul li a');
+      links.forEach(function (link, index) {
+        setTimeout(function () {
+          link.classList.add('is-visible');
+        }, index * 150);
+      });
+    });
+  }
+
   // --- Titres au scroll ---
   const elements = document.querySelectorAll('h2, h3');
   const observer = new IntersectionObserver(function (entries) {

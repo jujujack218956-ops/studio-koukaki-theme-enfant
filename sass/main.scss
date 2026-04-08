@@ -371,10 +371,17 @@ h3 {
       text-decoration: none;
       display: block;
       padding: 10px 0;
-      transition: color 0.3s ease;
+      opacity: 0; // ← ajout
+      transition:
+        color 0.3s ease,
+        opacity 0.6s ease; // ← ajout opacity
 
       &:hover {
-        color: #ff5c00;
+        text-shadow: 0 0 5px #ff5c00;
+      }
+
+      &.is-visible {
+        opacity: 1; // ← ajout
       }
     }
   }
