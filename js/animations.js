@@ -86,12 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
   new Swiper('.characters-swiper', {
     effect: 'coverflow',
     grabCursor: true,
-    slidesPerView: 3,
+    centeredSlides: true,
+    slidesPerView: 'auto',
     loop: true,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
-      depth: 100,
+      depth: 0,
       modifier: 1,
       slideShadows: false,
     },
