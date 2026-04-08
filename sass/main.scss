@@ -52,6 +52,13 @@
   justify-content: center;
 }
 
+.banner__inner {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  animation: fadeInTop 1.2s ease-out forwards;
+}
+
 .story,
 #studio,
 #place,
