@@ -128,7 +128,7 @@ h3 {
   z-index: 1;
 
   // Masque le fallback quand la vidéo est chargée
-  &+.banner__fallback {
+  & + .banner__fallback {
     display: none;
   }
 
@@ -261,18 +261,18 @@ h3 {
 // =============================================
 
 .menu-close {
-    position: absolute;
-    right: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    background: none;
-    border: none;
-    font-size: 2.5rem;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1000;
-    display: none;
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+  display: none;
 }
 
 // --- Burger toujours visible ---
@@ -405,22 +405,22 @@ h3 {
 
   &--1 {
     // violet → haut gauche
-    top: 10%;
-    left: 15%;
+    top: 12%;
+    left: 18%;
     animation-delay: 0s;
   }
 
   &--2 {
-    // jaune → bas droite
+    // jaune → bas gauche
     bottom: 10%;
-    right: 5%;
+    left: 5%;
     animation-delay: 0.5s;
   }
 
   &--3 {
     // gris → milieu droite
-    top: 30%;
-    right: 5%;
+    top: 40%;
+    right: 10%;
     animation-delay: 1s;
   }
 }
@@ -432,30 +432,37 @@ h3 {
   transform-origin: center;
 
   &--1 {
-    // orchid → haut gauche
+    // orchid → haut gauche, et déborde un peu
     top: 5%;
-    left: -3%;
+    left: -4%;
     width: 120px;
   }
 
   &--2 {
-    // sunflower → bas droite
-    bottom: 5%;
-    right: 2%;
+    // sunflower → haut droite
+    top: 5%;
+    right: 10%;
     width: 150px;
   }
 
   &--3 {
-    // hibiscus → bas gauche
-    bottom: 5%;
-    left: 2%;
-    width: 120px;
+    // hibiscus → bas droite
+    bottom: -22%;
+    right: -22%;
+    width: 400px;
   }
 
   &--4 {
-    // random → haut droite
-    top: 5%;
-    right: 2%;
-    width: 80px;
+    // random → milieu droite
+    top: 30%;
+    right: -3%;
+    width: 70px;
+  }
+
+  &--5 {
+    // flower → milieu gauche
+    top: 40%;
+    left: 15%;
+    width: 60px;
   }
 }

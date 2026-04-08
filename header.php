@@ -58,13 +58,13 @@
                     <img class="menu-cat menu-cat--1" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/cat.png" alt="">
                     <img class="menu-cat menu-cat--2" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/cat-yellow.png" alt="">
                     <img class="menu-cat menu-cat--3" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/cat-grey.png" alt="">
-                    <img class="menu-flower" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/flower.png" alt="">
 
                     <!-- Fleurs -->
                     <img class="menu-flower menu-flower--1" src="<?php echo get_template_directory_uri(); ?>/assets/images/orchid.png" alt="">
                     <img class="menu-flower menu-flower--2" src="<?php echo get_template_directory_uri(); ?>/assets/images/Sunflower.png" alt="">
                     <img class="menu-flower menu-flower--3" src="<?php echo get_template_directory_uri(); ?>/assets/images/hibiscus_footer.png" alt="">
                     <img class="menu-flower menu-flower--4" src="<?php echo get_template_directory_uri(); ?>/assets/images/random_flower.png" alt="">
+                    <img class="menu-flower menu-flower--5" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/flower.png" alt="">
                 </div>
             </nav>
         </header><!-- #masthead -->
