@@ -62,9 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let titleHeight = null;
 
   if (title && story) {
-    window.addEventListener('scroll', function () {
-
-      // Mesure au premier scroll, image déjà rendue
+    function updateTitlePosition() {
       if (titleHeight === null) {
         titleHeight = title.offsetHeight;
       }
@@ -75,11 +73,16 @@ document.addEventListener('DOMContentLoaded', function () {
       if (storyTop <= titleBottom) {
         title.style.top = (storyTop - titleHeight) + 'px';
         title.style.transform = 'none';
+        title.style.visibility = storyTop < 0 ? 'hidden' : 'visible';
       } else {
         title.style.top = '50%';
         title.style.transform = 'translateY(-50%)';
+        title.style.visibility = 'visible';
       }
-    });
+    }
+
+    updateTitlePosition();
+    window.addEventListener('scroll', updateTitlePosition);
   }
 
   // --- Carrousel personnages ---
