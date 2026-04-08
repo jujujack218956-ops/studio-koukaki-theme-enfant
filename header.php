@@ -65,6 +65,8 @@
                     <img class="menu-flower menu-flower--3" src="<?php echo get_template_directory_uri(); ?>/assets/images/hibiscus_footer.png" alt="">
                     <img class="menu-flower menu-flower--4" src="<?php echo get_template_directory_uri(); ?>/assets/images/random_flower.png" alt="">
                     <img class="menu-flower menu-flower--5" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images_koukaki/flower.png" alt="">
+
+                    <p class="menu-studio">STUDIO KOUKAKI</p>
                 </div>
             </nav>
         </header><!-- #masthead -->

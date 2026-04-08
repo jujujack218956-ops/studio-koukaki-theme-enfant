@@ -330,7 +330,9 @@ h3 {
 }
 
 .menu-overlay {
-  display: none;
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
   position: fixed;
   top: 80px;
   width: 100%;
@@ -341,7 +343,9 @@ h3 {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
   overflow: hidden;
 
   &__header {
@@ -378,8 +382,16 @@ h3 {
 
 // Quand le menu est ouvert
 .toggled .menu-overlay {
-  display: flex;
+  visibility: visible;
+  pointer-events: auto;
   opacity: 1;
+}
+
+.menu-studio {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
 }
 
 // --- Chats flottants ---
