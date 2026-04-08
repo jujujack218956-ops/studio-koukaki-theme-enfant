@@ -245,11 +245,13 @@ h3 {
     display: flex;
     align-items: center;
     width: 100%;
+    gap: 5px;
   }
 
   h3 {
     background-image: url("../../foce/assets/images/orange_characters_bg.png");
-    background-size: 100% 100%;
+    background-size: 102% 110%;
+    background-position: right center;
     text-align: left;
   }
 
