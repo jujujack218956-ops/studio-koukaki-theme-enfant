@@ -164,40 +164,19 @@ h3 {
 // =============================================
 // ÉTAPE 3 — Carrousel personnages
 // =============================================
-// #characters {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
+#characters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-//   h3 {
-//     width: 100%;
-//   }
-// }
+  h3 {
+    width: 100%;
+  }
+}
 
-// .characters-swiper {
-//   width: 100%;
-
-//   .swiper-slide {
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-
-//     figure {
-//       margin: 20px;
-//       text-align: center;
-
-//       img {
-//         width: 100%;
-//         height: auto;
-//         display: block;
-//       }
-//     }
-//   }
-// }
-
-// .swiper-slide {
-//   width: auto;
-// }
+.characters-swiper {
+  width: 100%;
+}
 
 // =============================================
 // ÉTAPE 4 — Nuages parallaxe
