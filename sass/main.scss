@@ -62,9 +62,9 @@
 
 // Les fleurs ont des pseudo-classes (::after et des ::before)
 // On cible leurs conteneurs pour appliquer la rotation
-article.story__article::after,
-footer#colophon.site-footer::before,
-footer#colophon.site-footer::after,
+.story__article::after,
+.site-footer::before,
+.site-footer::after,
 #studio h2::before,
 h2::after {
   animation: rotatePetal 6s linear infinite;
@@ -347,7 +347,8 @@ h3 {
   z-index: 999;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 15rem;
   opacity: 0;
   transition:
     opacity 0.4s ease,
@@ -368,7 +369,7 @@ h3 {
   ul {
     list-style: none;
     padding: 0;
-    margin-top: 9.375rem;
+    margin-top: 0;
     text-align: center;
 
     li a {
