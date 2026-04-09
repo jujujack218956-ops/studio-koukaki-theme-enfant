@@ -5,6 +5,7 @@ get_header();
 <main id="primary" class="site-main">
 
     <section class="banner">
+        <div class="banner__inner">
         <div class="banner__video-container">
             <video
                 class="banner__video"
@@ -18,6 +19,7 @@ get_header();
                 class="banner__fallback"
                 src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
                 alt="Fleurs d'oranger & chats errants">
+        </div>
         </div>
         <div class="banner__title">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"
