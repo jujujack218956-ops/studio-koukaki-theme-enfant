@@ -5,21 +5,24 @@ get_header();
 <main id="primary" class="site-main">
 
     <section class="banner">
+        <?php // .banner__inner enveloppe la vidéo pour porter l'animation fadeInTop.
+              // Le logo .banner__title reste en dehors car son position: fixed
+              // serait cassé par le transform de l'animation du wrapper. ?>
         <div class="banner__inner">
-        <div class="banner__video-container">
-            <video
-                class="banner__video"
-                autoplay
-                loop
-                muted
-                playsinline>
-                <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video_koukaki/video-header.mp4" type="video/mp4">
-            </video>
-            <img
-                class="banner__fallback"
-                src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
-                alt="Fleurs d'oranger & chats errants">
-        </div>
+            <div class="banner__video-container">
+                <video
+                    class="banner__video"
+                    autoplay
+                    loop
+                    muted
+                    playsinline>
+                    <source src="<?php echo get_stylesheet_directory_uri(); ?>/assets/video_koukaki/video-header.mp4" type="video/mp4">
+                </video>
+                <img
+                    class="banner__fallback"
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png"
+                    alt="Fleurs d'oranger & chats errants">
+            </div>
         </div>
         <div class="banner__title">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"

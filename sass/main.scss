@@ -184,6 +184,8 @@ h3 {
 .characters-swiper {
   width: 100%;
   max-width: 79.125rem;
+  // clip-path : masque les slides qui dépassent (ex : 4e personnage).
+  // overflow: hidden ne fonctionne pas ici car coverflow utilise des transforms 3D.
   clip-path: inset(0);
 
   .swiper-slide {
@@ -324,8 +326,6 @@ h3 {
 
 // Burger → Croix quand ouvert
 .toggled .menu-toggle {
-  right: 3.125rem;
-  top: 1.25rem;
   display: none;
 }
 
@@ -376,17 +376,17 @@ h3 {
       text-decoration: none;
       display: block;
       padding: 0.625rem 0;
-      opacity: 0; // ← ajout
+      opacity: 0;
       transition:
         color 0.3s ease,
-        opacity 0.6s ease; // ← ajout opacity
+        opacity 0.6s ease;
 
       &:hover {
         text-shadow: 0 0 5px #ff5c00;
       }
 
       &.is-visible {
-        opacity: 1; // ← ajout
+        opacity: 1;
       }
     }
   }

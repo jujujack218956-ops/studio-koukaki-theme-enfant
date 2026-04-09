@@ -30,9 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Animation liens menu à l'ouverture ---
-  const menuToggleBtn = document.querySelector('.menu-toggle');
-  if (menuToggleBtn && siteNav) {
-    menuToggleBtn.addEventListener('click', function () {
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener('click', function () {
       const links = document.querySelectorAll('.menu-overlay ul li a');
       links.forEach(function (link, index) {
         setTimeout(function () {
@@ -86,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // --- Carrousel personnages ---
+  // loop désactivé : Swiper 11 exige min. 6 slides pour boucler (on en a 5)
   new Swiper('.characters-swiper', {
     effect: 'coverflow',
     grabCursor: true,
     centeredSlides: true,
     slidesPerView: 'auto',
-    loop: false,
     coverflowEffect: {
       rotate: 0,
       stretch: 0,
