@@ -1,23 +1,6 @@
 // =============================================
 // ÉTAPE 1 — Animations générales
 // =============================================
-.banner__title {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  img {
-    animation: float 3s ease-in-out infinite;
-    max-width: 37.5rem;
-    margin-top: -20%;
-  }
-}
 
 // --- FadeIn des sections au chargement ---
 @keyframes fadeInTop {
@@ -105,6 +88,24 @@ h3 {
 // =============================================
 // ÉTAPE 2 — Hero Header
 // =============================================
+
+.banner__title {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  img {
+    animation: float 3s ease-in-out infinite;
+    max-width: 37.5rem;
+    margin-top: -20%;
+  }
+}
 
 .banner__fallback {
   position: absolute;
