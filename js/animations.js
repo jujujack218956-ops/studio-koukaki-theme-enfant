@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updateTitlePosition();
-    window.addEventListener('scroll', updateTitlePosition);
   }
 
   // --- Carrousel personnages ---
@@ -105,21 +104,27 @@ document.addEventListener('DOMContentLoaded', function () {
   const place = document.querySelector('#place');
   const clouds = document.querySelectorAll('.place__cloud');
 
-  if (place && clouds.length) {
-    window.addEventListener('scroll', function () {
-      const placeTop = place.getBoundingClientRect().top;
-      const placeHeight = place.offsetHeight;
-      const windowHeight = window.innerHeight;
+  function updateClouds() {
+    if (!place || !clouds.length) return;
 
-      if (placeTop < windowHeight && placeTop > -placeHeight) {
-        // Progression de 0 à 1 pendant le scroll sur la section
-        const progress = 1 - (placeTop / windowHeight);
-        const offset = Math.min(progress * 300, 300); // max 300px
+    const placeTop = place.getBoundingClientRect().top;
+    const placeHeight = place.offsetHeight;
+    const windowHeight = window.innerHeight;
 
-        clouds.forEach(function (cloud) {
-          cloud.style.transform = 'translateX(-' + offset + 'px)';
-        });
-      }
-    });
+    if (placeTop < windowHeight && placeTop > -placeHeight) {
+      // Progression de 0 à 1 pendant le scroll sur la section
+      const progress = 1 - (placeTop / windowHeight);
+      const offset = Math.min(progress * 300, 300); // max 300px
+
+      clouds.forEach(function (cloud) {
+        cloud.style.transform = 'translateX(-' + offset + 'px)';
+      });
+    }
   }
+
+  // --- Scroll handler unifié ---
+  window.addEventListener('scroll', function () {
+    if (title && story) updateTitlePosition();
+    updateClouds();
+  });
 });
