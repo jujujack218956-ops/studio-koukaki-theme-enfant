@@ -14,7 +14,7 @@
 
   img {
     animation: float 3s ease-in-out infinite;
-    max-width: 600px;
+    max-width: 37.5rem;
     margin-top: -20%;
   }
 }
@@ -183,7 +183,7 @@ h3 {
 
 .characters-swiper {
   width: 100%;
-  max-width: 1266px;
+  max-width: 79.125rem;
   clip-path: inset(0);
 
   .swiper-slide {
@@ -239,13 +239,13 @@ h3 {
 .oscar-nomination {
   display: flex;
   align-items: center;
-  padding: 60px;
+  padding: 3.75rem;
 
   &__content {
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 5px;
+    gap: 0.3rem;
   }
 
   h3 {
@@ -257,7 +257,7 @@ h3 {
 
   img {
     width: 100%;
-    max-width: 300px;
+    max-width: 18.75rem;
   }
 }
 
@@ -267,7 +267,7 @@ h3 {
 
 .menu-close {
   position: absolute;
-  right: 50px;
+  right: 3.125rem;
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
@@ -291,7 +291,7 @@ h3 {
 
 .menu-toggle {
   position: absolute !important;
-  right: 50px;
+  right: 3.125rem;
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
@@ -324,14 +324,14 @@ h3 {
 
 // Burger → Croix quand ouvert
 .toggled .menu-toggle {
-  right: 50px;
-  top: 20px;
+  right: 3.125rem;
+  top: 1.25rem;
   display: none;
 }
 
 // --- Overlay fullscreen ---
 .menu-overlay__header {
-  max-width: 1440px;
+  max-width: 90rem;
 }
 
 .menu-overlay {
@@ -339,9 +339,9 @@ h3 {
   visibility: hidden;
   pointer-events: none;
   position: fixed;
-  top: 80px;
+  top: 5rem;
   width: 100%;
-  height: calc(100% - 80px);
+  height: calc(100% - 5rem);
   background-color: #fff5e9;
   z-index: 999;
   flex-direction: column;
@@ -355,19 +355,19 @@ h3 {
 
   &__header {
     position: absolute;
-    top: 30px;
+    top: 1.875rem;
     left: 50%;
     transform: translateX(-50%);
   }
 
   &__logo {
-    width: 150px;
+    width: 15vw;
   }
 
   ul {
     list-style: none;
     padding: 0;
-    margin-top: 150px;
+    margin-top: 9.375rem;
     text-align: center;
 
     li a {
@@ -375,7 +375,7 @@ h3 {
       color: #404040;
       text-decoration: none;
       display: block;
-      padding: 10px 0;
+      padding: 0.625rem 0;
       opacity: 0; // ← ajout
       transition:
         color 0.3s ease,
@@ -401,7 +401,7 @@ h3 {
 
 .menu-studio {
   position: absolute;
-  bottom: 30px;
+  bottom: 1.875rem;
   width: 100%;
   text-align: center;
 }
@@ -424,7 +424,7 @@ h3 {
 // --- Chats flottants ---
 .menu-cat {
   position: absolute;
-  width: 100px;
+  width: 10vw;
   animation: floatCat 3s ease-in-out infinite;
 
   &--1 {
@@ -459,34 +459,102 @@ h3 {
     // orchid → haut gauche, et déborde un peu
     top: 5%;
     left: -4%;
-    width: 120px;
+    width: 12vw;
   }
 
   &--2 {
     // sunflower → haut droite
     top: 5%;
     right: 10%;
-    width: 150px;
+    width: 15vw;
   }
 
   &--3 {
     // hibiscus → bas droite
     bottom: -22%;
     right: -22%;
-    width: 400px;
+    width: 40vw;
   }
 
   &--4 {
     // random → milieu droite
     top: 30%;
     right: -3%;
-    width: 70px;
+    width: 7vw;
   }
 
   &--5 {
     // flower → milieu gauche
     top: 40%;
     left: 15%;
-    width: 60px;
+    width: 6vw;
+  }
+}
+
+// =============================================
+// ÉTAPE 7 — Responsive mobile
+// =============================================
+@media (max-width: 768px) {
+  // 1. Logo hero — empêcher le débordement
+  .banner__title img {
+    width: 100%;
+    max-width: 90vw;
+    margin-top: 0;
+  }
+
+  // 2. Section Oscars — passage en colonne
+  .oscar-nomination {
+    padding: 1.875rem 1.25rem;
+
+    &__content {
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    img {
+      max-width: 12.5rem;
+    }
+  }
+
+  // 3. Fleurs du footer — réduire la taille
+  footer#colophon.site-footer::before,
+  footer#colophon.site-footer::after {
+    width: 15vw !important;
+    height: 15vw !important;
+  }
+
+  // 4. Fleur décorative #studio h2::before — réduire
+  #studio h2::before {
+    width: 10vw !important;
+    height: 10vw !important;
+  }
+
+  // 5. Header — titre du site et burger
+  .site-title a {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    right: 1.25rem !important;
+  }
+
+  // 6. Header — hauteur minimale pour respiration
+  .main-navigation {
+    min-height: 4rem;
+  }
+
+  // 7. Titres — halo adapté aux titres multi-lignes
+  h2,
+  h3 {
+    background-size: 100% 100% !important;
+    padding: 1.5em 1.2em;
+    line-height: 1.2;
+  }
+
+  // 8. Titre Oscars — halo plus large sur titre multi-lignes
+  .oscar-nomination h3 {
+    padding: 2em 1.2em;
+    background-size: 100% 100% !important;
+    background-position: center !important;
   }
 }
