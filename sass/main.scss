@@ -1,4 +1,9 @@
 // =============================================
+// Variables
+// =============================================
+$header-height: 5rem;
+
+// =============================================
 // ÉTAPE 1 — Animations générales
 // =============================================
 
@@ -30,7 +35,7 @@
 .banner {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - #{$header-height});
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +43,7 @@
 
 .banner__inner {
   width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - #{$header-height});
   position: relative;
   animation: fadeInTop 1.2s ease-out forwards;
 }
@@ -66,11 +71,29 @@
 .story__article::after,
 .site-footer::before,
 .site-footer::after,
-#studio h2::before,
+#studio::before,
 h2::after,
 .site-footer ul::after {
   animation: rotatePetal 6s linear infinite;
   transform-origin: center center;
+}
+
+// Override parent : la fleur est sur #studio h2::before mais le h2 a
+// overflow:hidden qui clippe son débordement. On la déplace sur
+// #studio::before pour pouvoir déborder hors du conteneur.
+#studio h2::before {
+  content: none;
+}
+
+#studio {
+  overflow: hidden;
+}
+
+#studio::before {
+  content: url("../../foce/assets/images/random_flower.png");
+  position: absolute;
+  left: -3em;
+  top: 0;
 }
 
 // --- Apparition des titres au scroll ---
@@ -341,9 +364,9 @@ h3 {
   visibility: hidden;
   pointer-events: none;
   position: fixed;
-  top: 5rem;
+  top: $header-height;
   width: 100%;
-  height: calc(100% - 5rem);
+  height: calc(100% - #{$header-height});
   background-color: #fff5e9;
   z-index: 999;
   flex-direction: column;
