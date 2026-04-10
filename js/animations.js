@@ -41,6 +41,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // --- Fermeture du menu au clic sur un lien ---
+  if (siteNav && menuToggle) {
+    const menuLinks = document.querySelectorAll('.menu-overlay ul li a');
+    menuLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        siteNav.classList.remove('toggled');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
   // --- Titres au scroll ---
   const elements = document.querySelectorAll('h2, h3');
   const observer = new IntersectionObserver(function (entries) {
@@ -91,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     centeredSlides: true,
     slidesPerView: 'auto',
     coverflowEffect: {
-      rotate: 0,
+      rotate: 40,
       stretch: 0,
       depth: 0,
       modifier: 1,

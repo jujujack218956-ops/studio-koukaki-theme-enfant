@@ -30,6 +30,7 @@
 .banner {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,7 +67,8 @@
 .site-footer::before,
 .site-footer::after,
 #studio h2::before,
-h2::after {
+h2::after,
+.site-footer ul::after {
   animation: rotatePetal 6s linear infinite;
   transform-origin: center center;
 }
@@ -103,7 +105,7 @@ h3 {
   img {
     animation: float 3s ease-in-out infinite;
     max-width: 37.5rem;
-    margin-top: -20%;
+    margin-top: 10%;
   }
 }
 
@@ -180,7 +182,8 @@ h3 {
   overflow: hidden;
 
   h3 {
-    width: 100%;
+    width: fit-content;
+    margin-right: auto;
   }
 }
 
@@ -218,20 +221,20 @@ h3 {
   position: absolute;
   top: 0;
   will-change: transform;
-  filter: blur(33px);
+  filter: blur(16.5px);
   transition: transform 0.3s ease-out;
 }
 
 .place__cloud--big {
   left: 65%;
   top: 8%;
-  width: 35%;
+  width: 25%;
 }
 
 .place__cloud--little {
   left: 60%;
   top: 40%;
-  width: 20%;
+  width: 15%;
 }
 
 // =============================================
@@ -246,7 +249,7 @@ h3 {
     display: flex;
     align-items: center;
     width: 100%;
-    gap: 0.3rem;
+    gap: 0.2rem;
   }
 
   h3 {
@@ -553,7 +556,7 @@ h3 {
 
   // 8. Titre Oscars — halo plus large sur titre multi-lignes
   .oscar-nomination h3 {
-    padding: 2em 1.2em;
+    padding: 2.2em 1.2em;
     background-size: 100% 100% !important;
     background-position: center !important;
   }
