@@ -78,6 +78,13 @@ h2::after,
   transform-origin: center center;
 }
 
+// Sunflower.png n'est pas centrée dans son canvas — on recalibre
+// l'origine de rotation pour qu'elle tourne autour du centre visuel
+// de la fleur. Ajuster les % dans le DevTools si besoin.
+.story h2::after {
+  transform-origin: 50% 43%;
+}
+
 // Override parent : la fleur est sur #studio h2::before mais le h2 a
 // overflow:hidden qui clippe son débordement. On la déplace sur
 // #studio::before pour pouvoir déborder hors du conteneur.
@@ -425,6 +432,15 @@ h3 {
   opacity: 1;
 }
 
+// Grand écran : le logo hero (.banner__title) reste fixé au centre
+// vertical de la viewport. On pousse les liens sous cette zone pour
+// qu'ils ne soient plus recouverts par le logo quand le menu est ouvert.
+@media (min-width: 1200px) {
+  .toggled .menu-overlay {
+    padding-top: calc(50vh + 5rem);
+  }
+}
+
 .menu-studio {
   position: absolute;
   bottom: 1.875rem;
@@ -452,6 +468,7 @@ h3 {
   position: absolute;
   width: 10vw;
   animation: floatCat 3s ease-in-out infinite;
+  z-index: 1;
 
   &--1 {
     // violet → haut gauche
@@ -480,6 +497,7 @@ h3 {
   position: absolute;
   animation: rotatePetal 6s linear infinite;
   transform-origin: center;
+  z-index: 0;
 
   &--1 {
     // orchid → haut gauche, et déborde un peu
@@ -497,9 +515,10 @@ h3 {
 
   &--3 {
     // hibiscus → bas droite
-    bottom: -22%;
-    right: -22%;
-    width: 40vw;
+    bottom: -10%;
+    right: -10%;
+    width: 30vw;
+    max-width: 28rem;
   }
 
   &--4 {
