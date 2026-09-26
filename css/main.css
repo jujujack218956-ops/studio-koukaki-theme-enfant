@@ -1,20 +1,3 @@
-.banner__title {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.banner__title img {
-  animation: float 3s ease-in-out infinite;
-  max-width: 600px;
-  margin-top: -20%;
-}
-
 @keyframes fadeInTop {
   from {
     opacity: 0;
@@ -38,9 +21,17 @@
 .banner {
   position: relative;
   width: 100%;
+  min-height: calc(100vh - 5rem);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.banner__inner {
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  position: relative;
+  animation: fadeInTop 1.2s ease-out forwards;
 }
 
 .story,
@@ -58,13 +49,33 @@
     transform: rotate(360deg);
   }
 }
-article.story__article::after,
-footer#colophon.site-footer::before,
-footer#colophon.site-footer::after,
-#studio h2::before,
-h2::after {
+.story__article::after,
+.site-footer::before,
+.site-footer::after,
+#studio::before,
+h2::after,
+.site-footer ul::after {
   animation: rotatePetal 6s linear infinite;
   transform-origin: center center;
+}
+
+.story h2::after {
+  transform-origin: 50% 43%;
+}
+
+#studio h2::before {
+  content: none;
+}
+
+#studio {
+  overflow: hidden;
+}
+
+#studio::before {
+  content: url("../../foce/assets/images/random_flower.png");
+  position: absolute;
+  left: -3em;
+  top: 0;
 }
 
 h2,
@@ -77,14 +88,30 @@ h3.is-visible {
   opacity: 1;
 }
 
+.banner__title {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.banner__title img {
+  animation: float 3s ease-in-out infinite;
+  max-width: 37.5rem;
+  margin-top: 10%;
+}
+
 .banner__fallback {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 0;
 }
 
@@ -103,8 +130,7 @@ h3.is-visible {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   z-index: 1;
 }
 .banner__video + .banner__fallback {
@@ -133,6 +159,34 @@ h3.is-visible {
     transform: translateY(0px);
   }
 }
+.story #characters {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+.story #characters h3 {
+  width: fit-content;
+  margin-right: auto;
+}
+
+.characters-swiper {
+  width: 100%;
+}
+.characters-swiper .swiper-slide {
+  width: 33.333%;
+  box-sizing: border-box;
+}
+.characters-swiper .swiper-slide figure {
+  margin: 0;
+}
+.characters-swiper .swiper-slide figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .story #place {
   position: relative;
   overflow: hidden;
@@ -145,45 +199,47 @@ h3.is-visible {
   position: absolute;
   top: 0;
   will-change: transform;
-  filter: blur(33px);
+  filter: blur(16.5px);
   transition: transform 0.3s ease-out;
 }
 
 .place__cloud--big {
   left: 65%;
   top: 8%;
-  width: 35%;
+  width: 25%;
 }
 
 .place__cloud--little {
   left: 60%;
   top: 40%;
-  width: 20%;
+  width: 15%;
 }
 
 .oscar-nomination {
   display: flex;
   align-items: center;
-  padding: 60px;
+  padding: 3.75rem;
 }
 .oscar-nomination__content {
   display: flex;
   align-items: center;
   width: 100%;
+  gap: 0.2rem;
 }
 .oscar-nomination h3 {
   background-image: url("../../foce/assets/images/orange_characters_bg.png");
-  background-size: 100% 100%;
+  background-size: 102% 110%;
+  background-position: right center;
   text-align: left;
 }
 .oscar-nomination img {
   width: 100%;
-  max-width: 300px;
+  max-width: 18.75rem;
 }
 
 .menu-close {
   position: absolute;
-  right: 50px;
+  right: 3.125rem;
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
@@ -206,7 +262,7 @@ h3.is-visible {
 
 .menu-toggle {
   position: absolute !important;
-  right: 50px;
+  right: 3.125rem;
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
@@ -235,43 +291,44 @@ h3.is-visible {
 }
 
 .toggled .menu-toggle {
-  right: 50px;
-  top: 20px;
   display: none;
 }
 
 .menu-overlay__header {
-  max-width: 1440px;
+  max-width: 90rem;
 }
 
 .menu-overlay {
-  display: none;
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
   position: fixed;
-  top: 80px;
+  top: 5rem;
   width: 100%;
-  height: calc(100% - 80px);
+  height: calc(100% - 5rem);
   background-color: #fff5e9;
   z-index: 999;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 15rem;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
   overflow: hidden;
 }
 .menu-overlay__header {
   position: absolute;
-  top: 30px;
+  top: 1.875rem;
   left: 50%;
   transform: translateX(-50%);
 }
 .menu-overlay__logo {
-  width: 150px;
+  width: 15vw;
 }
 .menu-overlay ul {
   list-style: none;
   padding: 0;
-  margin-top: 150px;
+  margin-top: 0;
   text-align: center;
 }
 .menu-overlay ul li a {
@@ -279,16 +336,33 @@ h3.is-visible {
   color: #404040;
   text-decoration: none;
   display: block;
-  padding: 10px 0;
-  transition: color 0.3s ease;
+  padding: 0.625rem 0;
+  opacity: 0;
+  transition: color 0.3s ease, opacity 0.6s ease;
 }
 .menu-overlay ul li a:hover {
-  color: #ff5c00;
+  text-shadow: 0 0 5px #ff5c00;
+}
+.menu-overlay ul li a.is-visible {
+  opacity: 1;
 }
 
 .toggled .menu-overlay {
-  display: flex;
+  visibility: visible;
+  pointer-events: auto;
   opacity: 1;
+}
+
+@media (min-width: 1200px) {
+  .toggled .menu-overlay {
+    padding-top: calc(50vh + 5rem);
+  }
+}
+.menu-studio {
+  position: absolute;
+  bottom: 1.875rem;
+  width: 100%;
+  text-align: center;
 }
 
 @keyframes floatCat {
@@ -304,22 +378,23 @@ h3.is-visible {
 }
 .menu-cat {
   position: absolute;
-  width: 100px;
+  width: 10vw;
   animation: floatCat 3s ease-in-out infinite;
+  z-index: 1;
 }
 .menu-cat--1 {
-  top: 10%;
-  left: 15%;
+  top: 12%;
+  left: 18%;
   animation-delay: 0s;
 }
 .menu-cat--2 {
   bottom: 10%;
-  right: 5%;
+  left: 5%;
   animation-delay: 0.5s;
 }
 .menu-cat--3 {
-  top: 30%;
-  right: 5%;
+  top: 40%;
+  right: 10%;
   animation-delay: 1s;
 }
 
@@ -327,24 +402,80 @@ h3.is-visible {
   position: absolute;
   animation: rotatePetal 6s linear infinite;
   transform-origin: center;
+  z-index: 0;
 }
 .menu-flower--1 {
   top: 5%;
-  left: -3%;
-  width: 120px;
+  left: -4%;
+  width: 12vw;
 }
 .menu-flower--2 {
   top: 5%;
-  right: 5%;
-  width: 150px;
+  right: 10%;
+  width: 15vw;
 }
 .menu-flower--3 {
-  bottom: 5%;
-  left: 2%;
-  width: 120px;
+  bottom: -10%;
+  right: -10%;
+  width: 30vw;
+  max-width: 28rem;
 }
 .menu-flower--4 {
-  top: 5%;
-  right: 2%;
-  width: 80px;
-}/*# sourceMappingURL=main.css.map */
+  top: 30%;
+  right: -3%;
+  width: 7vw;
+}
+.menu-flower--5 {
+  top: 40%;
+  left: 15%;
+  width: 6vw;
+}
+
+@media (max-width: 768px) {
+  .banner__title img {
+    width: 100%;
+    max-width: 90vw;
+    margin-top: 0;
+  }
+  .oscar-nomination {
+    padding: 1.875rem 1.25rem;
+  }
+  .oscar-nomination__content {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  .oscar-nomination img {
+    max-width: 12.5rem;
+  }
+  footer#colophon.site-footer::before,
+  footer#colophon.site-footer::after {
+    width: 15vw !important;
+    height: 15vw !important;
+  }
+  #studio h2::before {
+    width: 10vw !important;
+    height: 10vw !important;
+  }
+  .site-title a {
+    font-size: 1rem;
+  }
+  .menu-toggle {
+    right: 1.25rem !important;
+  }
+  .main-navigation {
+    min-height: 4rem;
+  }
+  h2,
+  h3 {
+    background-size: 100% 100% !important;
+    padding: 1.5em 1.2em;
+    line-height: 1.2;
+  }
+  .oscar-nomination h3 {
+    padding: 2.2em 1.2em;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
